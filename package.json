@@ -1,0 +1,13 @@
+{
+  "name": "logistics-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "带中文注释的物流管理信息系统：Node.js + SQLite + 原生前端",
+  "type": "module",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "check": "node --check src/db.js && node --check src/service.js && node --check src/server.js && node --check public/app.js"
+  }
+}

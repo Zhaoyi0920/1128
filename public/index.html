@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>物流管理信息系统</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <section id="login" class="login-shell">
+    <form id="login-form" class="login-card">
+      <div class="brand-icon">运</div><p class="eyebrow">LOGISTICS WORKSPACE</p>
+      <h1>物流管理信息系统</h1><p class="muted">让订单、仓储与运输协同运转</p>
+      <label>管理员密码<input type="password" name="password" minlength="12" maxlength="256" autocomplete="current-password" required></label>
+      <button type="submit">进入工作台 →</button>
+      <p class="muted small">首次启动密码见服务端终端输出。</p>
+      <p id="login-error" role="alert"></p>
+    </form>
+  </section>
+  <div id="workspace" class="workspace" hidden>
+    <aside>
+      <div class="brand"><span class="brand-icon">运</span><div>物流管理<small>LOGISTICS SYSTEM</small></div></div>
+      <nav aria-label="主导航">
+        <button data-view="dashboard" class="active">◫　运营总览</button>
+        <button data-view="orders">▤　订单与运输</button>
+        <button data-view="inventory">▦　库存管理</button>
+        <button data-view="customers">◎　客户档案</button>
+      </nav>
+      <div class="aside-bottom"><p>单仓库 · 管理员工作台</p><button id="logout" class="secondary">退出登录</button></div>
+    </aside>
+    <main>
+      <header><div><p class="eyebrow">OPERATIONS / 管理工作台</p><h1 id="page-title">运营总览</h1></div><button id="refresh" class="secondary">刷新数据</button></header>
+      <div id="notice" role="status" hidden></div>
+      <section id="content" aria-label="业务内容"></section>
+      <footer>物流管理信息系统 · 本地持久化 · 示例项目</footer>
+    </main>
+  </div>
+  <dialog id="modal"><div class="dialog-head"><h2 id="modal-title"></h2><button id="close-modal" class="icon-button" aria-label="关闭">×</button></div><div id="modal-body"></div><p id="modal-error" role="alert"></p></dialog>
+</body>
+</html>
